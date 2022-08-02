@@ -33,9 +33,9 @@ function myFunction() {
 
 function summation(number) {
   let count = 0;
-  let newCount =0;
+  let newCount =0
   for(let i = 0; i <= number; i++){
-  count = count + i
+  newCount = count + number
   }
 
   return count

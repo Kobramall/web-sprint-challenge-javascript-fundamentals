@@ -32,17 +32,23 @@ function myFunction() {
 */
 
 function summation(number) {
-  let count = 0;
-  let newCount =0;
+  function counter(){
+    let count = 0
+    return function (){
+     count = count + 1;
+     return count;
+    } 
+    };
   for(let i = 0; i <= number; i++){
-  count = count + i
-  }
+  counter();
+    console.log('task 2:',counter());
+}
 
-  return count
+  return counter();
 }
  
   
-console.log('task 1:', summation(4));
+summation(4);
  //console.log('task 2:' , summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁

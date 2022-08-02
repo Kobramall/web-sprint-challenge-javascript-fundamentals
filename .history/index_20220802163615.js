@@ -17,7 +17,6 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-//nested function can access the varible internal because varible reach out of their function but vairbles can't reach inside functions 
 
 
 
@@ -32,17 +31,22 @@ function myFunction() {
 */
 
 function summation(number) {
-  let count = 0;
-  let newCount =0;
   for(let i = 0; i <= number; i++){
-  count = count + i
-  }
+  counter();
+    console.log('task 2:',counter());
+}
 
-  return count
+  return counter();
 }
  
-  
-console.log('task 1:', summation(4));
+  function counter(){
+ let count = 0
+ return function (){
+  count = count + 1;
+  return count;
+ } 
+ };
+summation(4);
  //console.log('task 2:' , summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -121,7 +125,7 @@ const zooAnimals = [
   */
 
   function USApop(array){
-    const USApopArr = array.reduce((acc, currentValue)=> {return acc + currentValue.population}, 0);
+    const USApopArr = array.reduce((element)=> {return element.population; 0});
   return USApopArr
   }
   
@@ -135,8 +139,8 @@ const zooAnimals = [
     💡 NOTE: The tests for 'consume' will pass if it is created correctly and also after you correctly complete the functions 'add' and 'greeting' below in Step 2.
   */
 
-  function consume(a, b, cb){
-   return cb(a,b);
+  function consume(/*Your Code Here */){
+    /*Your Code Here */
   }
  
   
@@ -147,8 +151,8 @@ const zooAnimals = [
  2. Return the sum of those numbers
  */
 
-function add(a,b ){
-    return a + b;
+function add(/*Your Code Here */){
+    /*Your Code Here*/
   }
 
 
@@ -157,8 +161,8 @@ function add(a,b ){
 2. Return the product of those numbers
 */
 
-function multiply(a ,b){
-   return a * b
+function multiply(/*Your Code Here */){
+   /*Your Code Here */
   }
 
 
@@ -168,8 +172,8 @@ function multiply(a ,b){
 💡 NOTE: The string returned must match the format above or the test will not pass!
 */
 
-function greeting(first, last){
-   return `Hello ${first} ${last}, nice to meet you!`
+function greeting(/*Your Code Here */){
+   return /*Your Code Here */
   }
   
   
@@ -194,10 +198,8 @@ function greeting(first, last){
 - Instances of CuboidMaker should initialize `length`, `width` and `height` properties
 */
 
-function CuboidMaker(props){
-  this.length = props.length;
-  this.width = props.width;  
-  this.height = props.height;
+function CuboidMaker(/*Your Code Here */){
+  /*Your Code Here */
 }
 
 
@@ -206,9 +208,7 @@ function CuboidMaker(props){
   💡 NOTE: Formula for cuboid volume: length * width * height   
 */
 
-CuboidMaker.prototype.volume = function(){
-  return this.length * this.width * this.height
-}
+
 
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
@@ -216,9 +216,7 @@ CuboidMaker.prototype.volume = function(){
   💡 NOTE: Formula for cuboid surface area: 2 * (length * width + length * height + width * height)  
 */
 
-CuboidMaker.prototype.surfaceArea = function(){
-  return (2 * this.length * this.width) + (2* this.length * this.height) + (2* this.height *this.width);
-}
+
 
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker (not auto graded)🐴🐴🐴
@@ -226,12 +224,12 @@ CuboidMaker.prototype.surfaceArea = function(){
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
 
-const newCuboid = new CuboidMaker({ length:4, width: 5, height:5});
+
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-//console.log(cuboid.volume()); // 100
+// console.log(cuboid.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
  
 
@@ -239,25 +237,10 @@ const newCuboid = new CuboidMaker({ length:4, width: 5, height:5});
 //Using CuboidMakerTwo, take your prototypes from above and refactor into class syntax. Then, create an object called cuboidTwo that uses the new keyword to use our CuboidMakerTwo class.
  
 class CuboidMakerTwo{
-  constructor(props){
-    this.length = props.length;
-    this.width = props.width;
-    this.height = props.height
-  }
 
-  volume(){
-    return this.length * this.width * this.height
-  }
-  surfaceArea(){
-    return (2 * this.length * this.width) + (2* this.length * this.height) + (2* this.height *this.width)
-  }
 }
 
-const cuboidTWO = new CuboidMakerTwo({
-  length : 4,
-  width : 5,
-  height: 5
-})
+
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄

@@ -17,7 +17,6 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-//nested function can access the varible internal because varible reach out of their function but vairbles can't reach inside functions 
 
 
 
@@ -32,17 +31,22 @@ function myFunction() {
 */
 
 function summation(number) {
-  let count = 0;
-  let newCount =0;
   for(let i = 0; i <= number; i++){
-  count = count + i
-  }
+  counter();
+    console.log('task 2:',counter());
+}
 
-  return count
+  return counter();
 }
  
-  
-console.log('task 1:', summation(4));
+  function counter(){
+ let count = 0
+ return function (){
+  count = count + 1;
+  return count;
+ } 
+ };
+summation(4);
  //console.log('task 2:' , summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -195,7 +199,7 @@ function greeting(first, last){
 */
 
 function CuboidMaker(props){
-  this.length = props.length;
+  this.lengt = props.lengt;
   this.width = props.width;  
   this.height = props.height;
 }
@@ -207,7 +211,7 @@ function CuboidMaker(props){
 */
 
 CuboidMaker.prototype.volume = function(){
-  return this.length * this.width * this.height
+  return this.lengt * this.width * this.height
 }
 
 
@@ -217,7 +221,7 @@ CuboidMaker.prototype.volume = function(){
 */
 
 CuboidMaker.prototype.surfaceArea = function(){
-  return (2 * this.length * this.width) + (2* this.length * this.height) + (2* this.height *this.width);
+  return this.lengt * this.width + this.lengt * this.height + this.width * this.height
 }
 
 
@@ -226,12 +230,12 @@ CuboidMaker.prototype.surfaceArea = function(){
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
 
-const newCuboid = new CuboidMaker({ length:4, width: 5, height:5});
+const newCuboid = new CuboidMaker({ lengt:4, width: 5, height:5});
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-//console.log(cuboid.volume()); // 100
+console.log(cuboid.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
  
 
@@ -239,25 +243,10 @@ const newCuboid = new CuboidMaker({ length:4, width: 5, height:5});
 //Using CuboidMakerTwo, take your prototypes from above and refactor into class syntax. Then, create an object called cuboidTwo that uses the new keyword to use our CuboidMakerTwo class.
  
 class CuboidMakerTwo{
-  constructor(props){
-    this.length = props.length;
-    this.width = props.width;
-    this.height = props.height
-  }
 
-  volume(){
-    return this.length * this.width * this.height
-  }
-  surfaceArea(){
-    return (2 * this.length * this.width) + (2* this.length * this.height) + (2* this.height *this.width)
-  }
 }
 
-const cuboidTWO = new CuboidMakerTwo({
-  length : 4,
-  width : 5,
-  height: 5
-})
+
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
